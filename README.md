@@ -1,3 +1,4 @@
+![CI](https://github.com/Sohila-Khaled-Abbas/airbnb-amsterdam-analysis/actions/workflows/ci.yml/badge.svg)
 # Amsterdam Airbnb Data Analytics
 An end-to-end data analytics project using PySpark, PostgreSQL, Power BI, and ML to analyze and predict Airbnb activity in Amsterdam.
 
