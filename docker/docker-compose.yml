@@ -1,0 +1,41 @@
+version: '3.9'
+
+services:
+
+  spark:
+    image: jupyter/pyspark-notebook:latest
+    container_name: spark
+    ports:
+      - "8888:8888"
+    volumes:
+      - ./notebooks:/home/jovyan/work/notebooks
+      - ./etl:/home/jovyan/work/etl
+      - ./ml:/home/jovyan/work/ml
+      - ./data:/home/jovyan/work/data
+      - ./jars:/home/jovyan/work/jars  # ⬅️ NEW LINE
+    environment:
+      - JUPYTER_ENABLE_LAB=yes
+    networks:
+      - airbnb_network
+
+  postgres:
+    image: postgres:14
+    container_name: postgres
+    restart: always
+    environment:
+      POSTGRES_DB: airbnb_amsterdam
+      POSTGRES_USER: airbnb
+      POSTGRES_PASSWORD: airbnb123
+    ports:
+      - "5432:5432"
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+    networks:
+      - airbnb_network
+
+volumes:
+  postgres_data:
+
+networks:
+  airbnb_network:
+    driver: bridge
