@@ -100,4 +100,4 @@ spark-submit ml/train_regression.py
 ---
 
 # Contact
-- Built by Sohila Khaled - [LinkedIn](https://www.linkedin.com/in/sohilakabbas) | [Portfolio](https://sohilakhaled.com)
+- Built by Sohila Khaled - [LinkedIn](https://www.linkedin.com/in/sohilakabbas) | [Portfolio](https://sohilakhaledportfolio.vercel.app/)
